@@ -1,0 +1,5 @@
+<ol class="breadcrumb">
+    <li><a target="_top" href="/admin/">首页</a></li>
+    <li><eq name="$title" value="欢迎页">{:$title}<else /><a href="/admin/{:request()->controller()}">{$nav}</a></eq></li>
+    <li class="active">{$title}</li>
+</ol>

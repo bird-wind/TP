@@ -1,0 +1,18 @@
+<script type="text/javascript" charset="utf-8" src="__VENDOR__/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__VENDOR__/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__VENDOR__/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+$(function(){
+    var ue = UE.getEditor('[text]',{
+        toolbars : [
+            [
+                'fullscreen', 'source', '|', 'undo', 'redo', '|',
+                'bold', 'italic', 'underline', 'strikethrough', 'removeformat', 'formatmatch', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|', 'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'insertframe', 'insertcode'
+            ],
+            [
+                'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|', 'indent', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', 'horizontal', '|', 'date', 'time', 'spechars', 'snapscreen', 'wordimage','|', 'preview', 'searchreplace'
+            ]
+        ]
+    });
+});
+</script>

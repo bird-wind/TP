@@ -1,0 +1,65 @@
+<layout name="layout" />
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header nav-top"><h2>博客后台</h2></div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">添加 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">欢迎回来,超级管理员 Admin</a></li>
+                <li class="dropdown">
+                    <div class="admin-avatar" data-toggle="dropdown"><img src="__SELF__/images/admin_avatar.jpg"><span class="badge admin-badge">4</span></div>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">查看消息</a></li>
+                        <li><a href="#">修改信息</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="container-fluid">
+    <div class="row content-one">
+        <div class="menu-left">
+            <div class="dropdown">
+                <div data-toggle="dropdown"><span class="glyphicon glyphicon-list icon"></span>文章管理</div>
+                <ul class="dropdown-menu admin-menu" role="menu" aria-labelledby="">
+                    <li role="presentation"><a role="menuitem" data-href="{:url('blog/index')}">文章列表</a></li>
+                    <li role="presentation"><a role="menuitem" data-href="{:url('blog/create')}">添加文章</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-right"><iframe id="iframe" src="{:url('index/welcome')}" frameborder="0" scrolling="auto" class="iframe"></iframe></div>
+    </div>
+</section>
+
+<include file="layout/base" />
+<script type="text/javascript">
+    var conHeight = $(window).height()-$(".navbar").height();
+    $(".content-one").height(conHeight);
+    $(".menu-left").height(conHeight);
+    $(function(){
+        $(".admin-menu>li").click(function(event){
+            event.stopPropagation();
+        });
+        $(".menu-left").find("a").click(function(){
+            $("#iframe").prop("src", $(this).attr("data-href"));
+        });
+    });
+</script>
